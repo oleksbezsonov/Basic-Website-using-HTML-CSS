@@ -1,0 +1,23 @@
+namespace: basic-website-using-html-css
+basic-website-using-html-css:
+  defines: runnable
+  metadata:
+    name: basic-website-using-html-css
+    description: >-
+      This application represents a simple website with navigation, image
+      sliders, team presentation cards and a connect section. It is mainly for
+      demonstrating HTML and CSS skills.
+    icon: https://emojiapi.dev/api/v1/globe_with_meridians.svg
+  containers:
+    basic-website-using-html-css:
+      build: .
+      image: env-1815.registry.local/basic-website-using-html-css:master-5d24707
+      dockerfile: Dockerfile
+  services:
+    '80':
+      container: basic-website-using-html-css
+      port: 80
+      host-port: 80
+      publish: false
+      protocol: TCP
+      description: HTTP port
